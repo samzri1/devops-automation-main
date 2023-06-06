@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u samzri -p ${dockerhubpwd}'
+                   withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                   sh 'docker login -u samzri@gmail.com -p ${dockerhubpwd}'
 
 }
                    sh 'docker push samzri/devops-integration'
