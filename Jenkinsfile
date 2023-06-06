@@ -21,23 +21,16 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u samzri -p dckr_pat_kRC0j5zg0C3mJhxQCeigH2xg0BA'
-
-}
+                   sh 'docker login -u samzri -p dckr_pat_kRC0j5zg0C3mJhxQCeigH2xg0BA'}
                    sh 'docker push samzri/devops-integration'
                 }
             }
         }
-        }
-        }
-        }
-        
-       // stage('Deploy to k8s'){
-          //  steps{
-           //     script{
-           //         kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
-            //    }
-           // }
-        //}
-    //}
-//}
+      //  stage('Deploy to k8s'){
+     //       steps{
+        //        script{
+      //              kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
+      //          }
+       //     }}
+    }
+}
