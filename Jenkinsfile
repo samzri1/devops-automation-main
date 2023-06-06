@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u samzri@gmail.com -p ${dockerhubpwd}'
+                   sh 'docker login -u samzri -p ${dockerhubpwd}'
 
 }
                    sh 'docker push samzri/devops-integration'
