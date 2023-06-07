@@ -28,7 +28,8 @@ pipeline {
         }
        stage('Deploy to vm'){
             steps{
-                script{
+                script{ 
+                    sh ' ssh  sam@20.231.209.56'
                 sh 'sshpass -p H1T8POVN21D4EE7Y$ ssh  sam@20.231.209.56 && docker pull samzri/devops-integration && docker run samzri/devops-integration'
               }
            }}
