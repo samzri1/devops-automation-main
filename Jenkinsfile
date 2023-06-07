@@ -26,11 +26,14 @@ pipeline {
                 }
             }
         }
-      //  stage('Deploy to k8s'){
-     //       steps{
-        //        script{
-      //              kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfigpwd')
-      //          }
-       //     }}
+       stage('Deploy to vm'){
+            steps{
+                script{
+                 sh '''sshpass -p H1T8POVN21D4EE7Y$ ssh  sam@20.231.209.56
+                        docker pull samzri/devops-integration:latest
+                        docker run samzri/devops-integration2:latest
+                        '''
+              }
+           }}
     }
 }
